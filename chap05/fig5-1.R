@@ -67,6 +67,8 @@ for(j in 1:(N_col-1)) {
   }
 }
 
-png(file='output/fig5-1.png', w=1600, h=1600, res=300)
-print(ggp, left=0.3, bottom=0.3)
-dev.off()
+ggp
+
+#png(file='output/fig5-1.png', w=1600, h=1600, res=300)
+#print(ggp, left=0.3, bottom=0.3)
+#dev.off()
