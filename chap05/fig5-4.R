@@ -24,7 +24,8 @@ p <- p + geom_line(data=d_melt, aes(x=value, group=X), stat='density', color='bl
 p <- p + geom_segment(data=d_mode, aes(x=X, xend=X, y=Y, yend=0), color='black', linetype='dashed', alpha=0.4)
 p <- p + geom_rug(data=d_mode, aes(x=X), sides='b')
 p <- p + labs(x='value', y='density')
-ggsave(file='output/fig5-4-left.png', plot=p, dpi=300, w=4, h=3)
+plot(p)
+#ggsave(file='output/fig5-4-left.png', plot=p, dpi=300, w=4, h=3)
 
 
 s_dens <- density(ms$s)
@@ -37,4 +38,5 @@ p <- p + geom_density(eval(bquote(aes(y=..count..*.(bw)))), alpha=0.5, color='bl
 p <- p + stat_function(fun=function(x) nrow(d)*bw*dnorm(x, mean=0, sd=s_MAP), linetype='dashed')
 p <- p + labs(x='value', y='count')
 p <- p + xlim(range(density(d_mode$X)$x))
-ggsave(file='output/fig5-4-right.png', plot=p, dpi=300, w=4, h=3)
+plot(p)
+#ggsave(file='output/fig5-4-right.png', plot=p, dpi=300, w=4, h=3)
