@@ -6,3 +6,5 @@ rownames(d_conv) <- c('A', 'B', 'C')
 data <- list(I=nrow(d), A=d$A, Score=d$Score/200, WID=d_conv[d$Weather, ], Y=d$Y)
 
 fit <- stan(file='ex4.stan', data=data, pars=c('b', 'bw2', 'bw3'), seed=1234)
+
+save.image(file = '../output/result-ex4.RData')
