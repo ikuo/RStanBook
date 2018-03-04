@@ -24,3 +24,7 @@ df <- data.frame(b1=ms$b1, b2=ms$b2, b3=ms$b3, sigma=ms$sigma, mu1=ms$mu[,1], mu
 dev.new()
 pairs.panels(df)
 dev.off()
+
+# 5.2
+library(psych)
+pairs.panels(d)
