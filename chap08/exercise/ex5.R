@@ -11,3 +11,5 @@ data <- list(N=N, C=C, I=I, A=d1$A, Score=d1$Score/200,
   PID=d2$PersonID, CID=d2$CourseID, W=d_conv[d2$Weather, ], Y=d2$Y)
 fit <- stan(file='ex5.stan', data=data,
   pars=c('b', 'b_P', 'b_C', 's_P', 's_C', 'q'), seed=1234)
+
+save.image(file = '../output/result-ex5.RData')
